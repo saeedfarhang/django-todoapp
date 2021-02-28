@@ -9,13 +9,13 @@
         {% for todoitem in todolist %}
         
             <li class="list-group-item todo-item">
-              {% if todoitem.checked %}
-              <input class="form-check-input me-1" type="checkbox" name='checked' checked value="{{todoitem.id}}" aria-label="...">
-              {% else %}
-              <input class="form-check-input me-1" type="checkbox"  name='checked' value="{{todoitem.id}}" aria-label="...">
-              {% endif %}
-              {{todoitem.work}}
-              <a class='btn btn-danger' href="{% url 'todoapp:todo_item_delete' todoitem.id %}">X</a>
+              <div>{% if todoitem.checked %}
+                <input class="form-check-input me-1" type="checkbox" name='checked' checked value="{{todoitem.id}}" aria-label="...">
+                {% else %}
+                <input class="form-check-input me-1" type="checkbox"  name='checked' value="{{todoitem.id}}" aria-label="...">
+                {% endif %}
+                {{todoitem.work}}
+                <a class='btn btn-danger' href="{% url 'todoapp:todo_item_delete' todoitem.id %}">X</a></div>
             </li>
         
         {% endfor %}
