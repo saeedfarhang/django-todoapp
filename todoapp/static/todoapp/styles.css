@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.delete-todo-item {
+  text-align: end;
+  flex-grow: 1;
+}
