@@ -1,10 +1,21 @@
 {% extends 'base.html' %}
 {% block title %} create todo item {% endblock %}
 {% block content %}
-<h1>create</h1>
-<form action="" method="POST">
-    {{form}}
-    <button type="submit">add</button>
+<div class="container create-form-container">
+    <h1>create</h1>
+<form class="create-todo-form" action="" method="POST">
+    <div class='input-container'>
+        <label for="">{{form.work.label}}</label>
+        <input class="form-control" type="text" name="work" id="id_work">
+        <p class='helper-text'>please write your todo job</p>
+    </div>
+    <div class='input-container'>
+        <label for="">{{form.date.label}}</label>
+        <input class="form-control" type="datetime-local" name="date" id="id_date">
+        <p class='helper-text'>here you can pick a date and time for your job. not required!</p>
+    </div>
+    <button class='btn btn-primary' type="submit">add</button>
     {% csrf_token %}
 </form>
+</div>
 {% endblock %}
